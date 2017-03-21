@@ -262,9 +262,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         for (int i = 0; i < 88; i++) {
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(10, 10);
-            layoutParams.setMargins(0, 0, 5, 0);
+            layoutParams.setMargins(0, 0, 5, 13);
             View view = new View(this);
-            view.setBackgroundColor(Color.YELLOW);
+            view.setBackgroundColor(Color.GREEN);
             view.setLayoutParams(layoutParams);
             circleList.add(view);
             ll_circle_container.addView(view);
@@ -317,6 +317,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             va.setDuration(100);
             //开始动画
             va.start();
+
+
+
+            ObjectAnimator animator = ObjectAnimator.ofFloat(circleView, "translationY", circleView.getTranslationY(), -(height));
+            animator.setDuration(120);
+            animator.start();
 
 
 
