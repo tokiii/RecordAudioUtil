@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.wuchanghe.recordaudioutil.MainActivity">
+
+    <Button
+        android:id="@+id/btn_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="录音" />
+
+
+    <TextView
+        android:id="@+id/tv_record_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/tv_record_file_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_play"
+            android:text="播放"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_alignParentRight="true"
+            android:id="@+id/btn_pause"
+            android:text="暂停"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_music_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"/>
+
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:id="@+id/tv_music_max_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"/>
+
+    </RelativeLayout>
+
+    <SeekBar
+        android:visibility="gone"
+        android:id="@+id/seek_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <com.example.wuchanghe.recordaudioutil.views.HorizontalScaleScrollView
+        android:id="@+id/horizontalScale"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/horizontalScaleValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:lf_scale_view_max="400"
+        app:lf_scale_view_min="0"
+        app:lf_scale_view_height="8dip"
+        app:lf_scale_view_margin="10dip"
+        />
+
+    <HorizontalScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:background="@android:color/black"
+        android:layout_height="200dp"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_container"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+
+                android:id="@+id/ll_circle_container"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:gravity="bottom"></LinearLayout>
+
+        </RelativeLayout>
+
+
+    </HorizontalScrollView>
+
+
+
+    <com.example.wuchanghe.recordaudioutil.WaveRecyclerView
+        android:id="@+id/rv_time"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></com.example.wuchanghe.recordaudioutil.WaveRecyclerView>
+
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="播放页"/>
+
+
+    <com.example.wuchanghe.recordaudioutil.views.AudioBarGraph
+        android:visibility="gone"
+        android:id="@+id/audio_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
